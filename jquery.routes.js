@@ -44,9 +44,18 @@ var Routes = {
 		return output;
 	},
 	parse: function(route) {
+		var self = this;
+
 		Loading.show();
+		
 		var jqxhr = $.get(route.template, function(html) {
 			$("article > section").html(html);
+
+			if (typeof route.meta !== "undefined") {
+				self.load_meta_information(route.meta);
+			}
+			
+			Loading.hide();
 		});
 
 
@@ -64,6 +73,21 @@ var Routes = {
 			$.each(route.parameters, function(key, regex) {
 				self.parameters[key] = self.hash.match("^"+self.to_regex(uri, route)+"$")[1];
 			});
+		}
+	},
+	load_meta_information: function(meta) {
+
+		if (typeof meta.title !== "undefined") {
+			$("title").html(meta.title);
+			$("meta[name=title]").attr("content", meta.title);
+		}
+
+		if (typeof meta.keywords !== "undefined") {
+			$("meta[name=keywords]").attr("content", meta.keywords);
+		}
+
+		if (typeof meta.description !== "undefined") {
+			$("meta[name=description]").attr("content", meta.description);
 		}
 	}
 }

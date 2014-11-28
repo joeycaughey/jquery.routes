@@ -16,7 +16,12 @@ $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
   			template: "site/home.html"
   		},
   		"news/": {
-  			template: "site/news/index.html"
+  			template: "site/news/index.html",
+        meta: {
+          title: "News title meta tag",
+          description: "This is the description meta tag",
+          keywords: "This is the keywords meta tag"
+        }
   		},
   		"news/archives/:date/": {
   			template: "site/news/index.html",
