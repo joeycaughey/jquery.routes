@@ -9,7 +9,7 @@ USAGE AND INITIALIZATION
 ----------------------------------------------------
 Include the jquery.routes.js and add instances of all your pages and parameters with corresponding regular expressions for accepted data type.   Then using hashbang (/#!/news/) to reference pages will replace (article > section) with the page template content.
 
-
+```
 $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
   	Routes.init({
   		"": {
@@ -32,13 +32,15 @@ $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
   		},
   	});
 });
+```
 
 
 ----------------------------------------------------
 HTML
 ----------------------------------------------------
-
+```
 <article>
     <section>
     </section>
 </article>
+```
