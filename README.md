@@ -11,26 +11,26 @@ Include the jquery.routes.js and add instances of all your pages and parameters 
 
 
 $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
-  		Routes.init({
-  			"": {
-  				template: "site/home.html"
-  			},
-  			"news/": {
-  				template: "site/news/index.html"
-  			},
-  			"news/archives/:date/": {
-  				template: "site/news/index.html",
-  				parameters: {
-  					date: "[0-9]{4}-[0-9]{1,2}"
-  				}
-  			},
-  			"news/article/:slug/": {
-  				template: "site/news/article.html",
-  				parameters: {
-  					slug: "[a-zA-Z0-9-]+"
-  				}
-  			},
-  		});
+  	Routes.init({
+  		"": {
+  			template: "site/home.html"
+  		},
+  		"news/": {
+  			template: "site/news/index.html"
+  		},
+  		"news/archives/:date/": {
+  			template: "site/news/index.html",
+  			parameters: {
+  				date: "[0-9]{4}-[0-9]{1,2}"
+  			}
+  		},
+  		"news/article/:slug/": {
+  			template: "site/news/article.html",
+  			parameters: {
+  				slug: "[a-zA-Z0-9-]+"
+  			}
+  		},
+  	});
 });
 
 
@@ -39,7 +39,6 @@ HTML
 ----------------------------------------------------
 
 <article>
-  <section>
-  
-  </section>
+    <section>
+    </section>
 </article>
