@@ -34,6 +34,19 @@ $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
 });
 ```
 
+----------------------------------------------------
+Return Variables
+----------------------------------------------------
+All parameters are returned to the page as in the object (Routes.parameters)
+
+```
+parameters: {
+    date: "[0-9]{4}-[0-9]{1,2}"
+}
+
+Returns as:
+Routes.parameters.date
+```
 
 ----------------------------------------------------
 HTML
@@ -49,3 +62,7 @@ Errors
 ----------------------------------------------------
 A non existant template page or redirection automatically loads a 404 template
 site/errors/404.html
+
+
+
+
