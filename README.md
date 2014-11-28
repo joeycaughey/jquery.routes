@@ -61,7 +61,7 @@ HTML
 Errors
 ----------------------------------------------------
 A non existant template page or redirection automatically loads a 404 template
-site/errors/404.html
+(site/errors/404.html)
 
 
 
