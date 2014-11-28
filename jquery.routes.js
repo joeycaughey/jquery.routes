@@ -17,12 +17,7 @@ var Routes = {
 		$.each(routes, function(uri, route) {
 			if (uri.slice(-1) !== "/") { uri=uri+"/"; }
 			var regex = new RegExp("^"+self.to_regex(uri, route)+"$", 'gi');
-			//console.log("^"+self.to_regex(uri, route)+"$");
-			//console.log("route : ", self.hash, uri, route, self.to_regex(uri, route));
 			if (self.hash.match(regex)) {		
-				//console.log("hash : ", self.hash, regex.test(self.hash));
-				//console.log("GOT : ", uri, route, self.to_regex(uri, route));
-				
 				self.parse(route);
 				self.get_parameters(uri, route);
 				match = true;
@@ -67,7 +62,6 @@ var Routes = {
 		var self = this;
 		if (typeof route.parameters !== "undefined") {
 			$.each(route.parameters, function(key, regex) {
-				console.log(self.hash, " | ", uri, " | ", self.hash.match("^"+self.to_regex(uri, route)+"$")[1]);
 				self.parameters[key] = self.hash.match("^"+self.to_regex(uri, route)+"$")[1];
 			});
 		}
@@ -81,9 +75,3 @@ if (typeof Routes.reload == 'function') {
 		Routes.reload();
 	});
 }
-
-$(document).ready(function(){
-	if (document.location!=Routes.hash) {
-		//Routes.reload();
-	};
-});
