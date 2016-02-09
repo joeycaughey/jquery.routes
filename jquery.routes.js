@@ -46,7 +46,13 @@ var Routes = {
 	parse: function(route) {
 		var self = this;
 
-		Loading.show();
+	
+		if (typeof ProloaderShow === "function") {
+                        ProloaderShow();
+                } else if (typeof Loading.show === "function") {
+                	Loading.show();
+                }
+                
 		
 		var jqxhr = $.get(route.template, function(html) {
 			$("article > section").html(html);
@@ -55,7 +61,11 @@ var Routes = {
 				self.load_meta_information(route.meta);
 			}
 			
-			Loading.hide();
+			if (typeof ProloaderHide === "function") {
+	                        ProloaderHide();
+	                } else if (typeof Loading.hide === "function") {
+	                	Loading.hide();
+	                }
 		});
 
 
