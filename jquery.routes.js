@@ -47,13 +47,10 @@ var Routes = {
 		var self = this;
 
 	
-		if (typeof ProloaderShow === "function") {
-                        ProloaderShow();
-                } else if (typeof Loading.show === "function") {
-                	Loading.show();
-                }
+		if (typeof PreloaderShow === "function") {
+                        PreloaderShow();
+                } 
                 
-		
 		var jqxhr = $.get(route.template, function(html) {
 			$("article > section").html(html);
 
@@ -61,11 +58,9 @@ var Routes = {
 				self.load_meta_information(route.meta);
 			}
 			
-			if (typeof ProloaderHide === "function") {
-	                        ProloaderHide();
-	                } else if (typeof Loading.hide === "function") {
-	                	Loading.hide();
-	                }
+			if (typeof PreloaderHide === "function") {
+	                        PreloaderHide();
+	                } 
 		});
 
 
