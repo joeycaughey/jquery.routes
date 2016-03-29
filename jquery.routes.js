@@ -17,9 +17,11 @@ var Routes = {
 
         var found = false;
         $.each(routes, function(uri, route) {
+            //if (uri.slice(-1) !== "/") { uri=uri+"/"; }
             var regex = new RegExp("^" + self.to_regex(uri, route) + "$", 'gi');
 
             if (self.hash.match(regex)) {
+                //console.log("FOUND : ", uri, "  | ", self.to_regex(uri, route), " | Match : ", self.hash.match(regex), " Hash : ", self.hash);
                 self.parse(route);
                 self.get_parameters(uri, route);
                 //console.log("Found : ", uri, route);
@@ -33,6 +35,7 @@ var Routes = {
     init: function(routes) {
         var self = this;
         self.routes = routes;
+        Routes.reload();
     },
     to_regex: function(uri, route) {
         var output = uri;
@@ -61,6 +64,11 @@ var Routes = {
             reload_ui();
             $("article > section#content-first").css("visibility", "visible");
 
+            if (self.hash==="") {
+                $("body").addClass("home");
+            } else {
+                $("body").removeClass("home"); 
+            }
         });
 
         jqxhr.error(function() {
@@ -96,10 +104,12 @@ var Routes = {
     }
 }
 
-if (typeof Routes.reload == 'function') {
-    $(window).bind('hashchange', function() {
-        Routes.reload();
-    }).load(function() {
-        Routes.reload();
-    });
-}
+$(document).ready(function(){
+    if (typeof Routes.reload === 'function') {
+        $(window).bind('hashchange', function() {
+            Routes.reload();
+        }).load(function() {
+            //Routes.reload();
+        });
+    }
+});
