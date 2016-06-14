@@ -72,7 +72,7 @@ var Routes = {
         });
 
         jqxhr.error(function() {
-            $.get("site/errors/404.html", function(html) {
+            $.get("errors/404.html", function(html) {
                 $("article > section").html(html)
                     .append($('<div style="clear: both;">'));
             });
