@@ -12,6 +12,7 @@ Include the jquery.routes.js and add instances of all your pages and parameters 
 
 There are five components to a route:
 
+```
 "uri_path": {
   "template": "file_location",
   "target": "selector",
@@ -24,6 +25,7 @@ There are five components to a route:
     "name": "regex"
   }
 }
+```
 
 1) "uri_path" - The uri page is the web url path with any dynamic variables that are defined by adding a colon(:) before the variable name.  
 
