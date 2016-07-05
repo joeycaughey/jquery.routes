@@ -38,7 +38,9 @@ Where date is the parameter variable name that will be defined in parameters. Pa
 
 4) "meta" (optional) - The dynamic page title and meta tags can be replaced by adding meta values to your route.  These are optional.
 
-5) "parameters" - Parameters define the format of accepted content to the parameter variable in the uri_path.  These parater formats are defined using regular expressions (regex).
+5) "parameters" - Parameters define the format of accepted content to the parameter variable in the uri_path.  These parater formats are defined using regular expressions (regex).  
+
+For more info of regular expressions visit: http://regexr.com/
 
 
 
