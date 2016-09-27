@@ -12,7 +12,7 @@ Include the jquery.routes.js and add instances of all your pages and parameters 
 
 There are five components to a route:
 
-```
+```javascript
 "uri_path": {
   "template": "file_location",
   "target": "selector",
@@ -48,9 +48,9 @@ For more info of regular expressions visit: http://regexr.com/
 EXAMPLES
 ----------------------------------------------------
 
-```
+```javascript
 $.getScript("/_assets/jquery.routes/jquery.routes.js", function() {
-
+  Routes.init({
   		"news/": {
   			template: "news/index.html",
         meta: {
@@ -80,7 +80,7 @@ Return Variables
 ----------------------------------------------------
 All parameters are returned to the page as in the object (Routes.parameters)
 
-```
+```javascript
 parameters: {
     date: "[0-9]{4}-[0-9]{1,2}"
 }
@@ -92,12 +92,13 @@ Routes.parameters.date
 ----------------------------------------------------
 HTML
 ----------------------------------------------------
-```
+```html
 <article>
     <section id="content-first>
     </section>
 </article>
 ```
+
 ----------------------------------------------------
 Errors
 ----------------------------------------------------
